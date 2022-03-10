@@ -178,7 +178,7 @@ while computeDistancePointToPoint(current_pos_x,current_pos_y,*goal)>step_size:
             # print("loop entered")
 
             # if current_pos_x>temp_lis[index_val][0] and current_pos_y>temp_lis[index_val][1]:
-            if computeDistancePointToPoint(current_pos_x,current_pos_y,*temp_lis[index_val])<step_size*4:
+            if computeDistancePointToPoint(current_pos_x,current_pos_y,*temp_lis[index_val])<step_size*5:
                 vec_sg_x=goal_x-current_pos_x
                 vec_sg_y=goal_y-current_pos_y
                 vec_magnitude=sqrt(vec_sg_x**2+vec_sg_y**2)
@@ -235,7 +235,7 @@ for i in range(len(path)):
     data_pt=str(path[i][0])+","+str(path[i][1])
     file_output.write(data_pt)
     file_output.write("\n")
-# file_output,close()
+file_output.close()
 dist_from_goal=[]
 lis_x=[]
 lis_y=[]
@@ -264,5 +264,5 @@ plt.show()
 # plt.savefig("dist_vs_iter.png")
 
 # plt.plot(lis_time,dist_from_goal)
-# # plt.show()
+# plt.show()
 # plt.savefig("dist_vs_time.jpg")
